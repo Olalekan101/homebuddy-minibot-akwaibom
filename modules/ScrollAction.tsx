@@ -12,7 +12,6 @@ import {
 import { useState,useRef } from "react"
 import { DialogAction } from "./DialogAction"
 import Image from "next/image"
-import { AspectRatio } from "@/components/ui/aspect-ratio"
 import { MapPin } from "lucide-react"
 
 
@@ -21,6 +20,9 @@ export function CarouselAction() {
     const plugin = useRef(
         Autoplay({ delay: 3000, stopOnInteraction: true, })
       )
+      const handleTouchStart = () => {
+        console.log('Touch started');
+      };
   return (
     <div className="w-full h-full">
         <Carousel
@@ -36,8 +38,8 @@ export function CarouselAction() {
     >
       <CarouselContent className="-mt-1 h-[200px]">
         {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="pt-1 h-[200px] " onClick={()=>setDialog(!valueDialog)}>
-            <div className="p-1 h-[150px]">
+          <CarouselItem key={index} className="pt-1 h-[200px] " >
+            <div className="p-1 h-[150px]" onClick={()=>setDialog(!valueDialog)} onTouchStart={()=>setDialog(!valueDialog)}>
               <Card >
                 <CardContent className="flex items-start justify-start p-2 h-[150px] gap-1">
                     <div className="w-[65%] h-full">
