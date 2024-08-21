@@ -39,7 +39,7 @@ export function CarouselAction() {
       <CarouselContent className="-mt-1 h-[200px]">
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index} className="pt-1 h-[200px] " >
-            <div className="p-1 h-[150px]" onClick={()=>setDialog(!valueDialog)} onTouchStart={()=>setDialog(!valueDialog)}>
+            <div className="p-1 h-[150px]" onClick={()=>setDialog(!valueDialog)}>
               <Card >
                 <CardContent className="flex items-start justify-start p-2 h-[150px] gap-1">
                     <div className="w-[65%] h-full">
