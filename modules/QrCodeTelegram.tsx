@@ -5,7 +5,7 @@ import {
     useScanQrPopup,
     useShowPopup,
   } from '@vkruglikov/react-telegram-web-app';
-import { Button, Form, Typography } from 'antd';
+import { Button } from '@/components/ui/button';
 
 export default function QrCodeTelegram() {
     const [state,setState] = useState("")
@@ -28,37 +28,23 @@ export default function QrCodeTelegram() {
       console.log(showPopup);
       
   return (
-    <>
-      <Typography.Title level={3}>useScanQrPopup</Typography.Title>
-      <Form
-        labelCol={{ span: 6 }}
-        name="ScanQrPopupDemo"
-        layout="horizontal"
-        autoComplete="off"
-      >
-        <Form.Item>
-          <Button
-            block
-            type="primary"
-            htmlType="button"
-            onClick={() =>
-              showQrPopup(
-                {
-                  text: 'Привет друг',
-                },
-                text => {
-                  closeQrPopup();
-                  showPopup({
-                    message: text,
-                  });
-                },
-              )
-            }
-          >
-            showScanQrPopup
-          </Button>
-        </Form.Item>
-      </Form>
-    </>
+    <div className='w-full mx-auto flex justify-center'>
+      <Button onClick={() =>
+              
+                showQrPopup(
+                    {
+                      text: 'Scan Code',
+                    },
+                    text => {
+                      closeQrPopup();
+                      showPopup({
+                        message: text,
+                      });
+                    },
+                  )          
+            }>
+        Scan QrCode
+      </Button>
+    </div>
   )
 }
