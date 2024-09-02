@@ -14,25 +14,30 @@ export default function QrCodeTelegram() {
       console.log(showPopup,"popop",state);
       
   return (
+    <>
      <Button
             onClick={() =>
-              {
+              
                 showQrPopup(
                     {
-                      text: 'Привет друг',
+                      text: 'Scan student ID',
+                      
                     },
                     text => {
                       closeQrPopup();
-                      showPopup({
-                        message: text,
-                      });
+                    //   showPopup({
+                    //     message: text,
+                    //   });
+                      
+                      setState(text)
                     },
-                  ),
-                  setState("check")
-              }
+                  )
+              
             }
           >
-            showSetKK
+            showSetokay
           </Button>
+          <div className="text-2xl text-white">{state}</div>
+        </>
   )
 }
