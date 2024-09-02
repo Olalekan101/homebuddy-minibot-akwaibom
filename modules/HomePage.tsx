@@ -1,5 +1,6 @@
 import React from 'react'
 import { LgaSelection } from './LGAsearchAction'
+import QrCodeTelegram from './QrCodeTelegram'
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       </div>
       <div className="mt-10">
         <LgaSelection/>
+        <QrCodeTelegram/>
       </div>
     </div>
   )
