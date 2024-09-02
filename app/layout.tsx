@@ -3,6 +3,7 @@ import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import TelegramWapper from "@/modules/TelegramWapper";
 import Footer from "@/modules/Footer";
+import Header from "@/modules/Header";
 
 
 const inter = Josefin_Sans({ subsets: ["latin"] });
@@ -20,10 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Header/>
         <TelegramWapper>
         {children}
         </TelegramWapper>
-        <Footer/>
+        {/* <Footer/> */}
       </body>
     </html>
   );

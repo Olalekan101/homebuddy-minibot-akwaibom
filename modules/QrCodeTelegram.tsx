@@ -32,7 +32,7 @@ export default function QrCodeTelegram() {
               }
             }
           >
-            showSet
+            showSetKK
           </Button>
   )
 }
