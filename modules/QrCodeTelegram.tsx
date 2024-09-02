@@ -11,27 +11,28 @@ export default function QrCodeTelegram() {
     const [state,setState] = useState("")
       const [showQrPopup, closeQrPopup] = useScanQrPopup();
       const showPopup = useShowPopup();
-      console.log(showPopup);
+      console.log(showPopup,"popop",state);
       
   return (
-    <div className='w-full mx-auto flex justify-center'>
      <Button
             onClick={() =>
-              showQrPopup(
-                {
-                  text: 'Привет друг',
-                },
-                text => {
-                  closeQrPopup();
-                  showPopup({
-                    message: text,
-                  });
-                },
-              )
+              {
+                showQrPopup(
+                    {
+                      text: 'Привет друг',
+                    },
+                    text => {
+                      closeQrPopup();
+                      showPopup({
+                        message: text,
+                      });
+                    },
+                  ),
+                  setState("check")
+              }
             }
           >
-            showS
+            showSet
           </Button>
-    </div>
   )
 }

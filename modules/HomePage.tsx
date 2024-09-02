@@ -14,8 +14,8 @@ export default function HomePage() {
       </div>
       <div className="mt-10">
         <LgaSelection/>
-        <QrCodeTelegram/>
       </div>
+        <QrCodeTelegram/>
     </div>
   )
 }
